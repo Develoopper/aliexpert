@@ -29,7 +29,7 @@ const form2 = {
 }
 
 const form3 = {
-  title: "Plan de la société",
+  title: "Titre 3",
   inputs: [
     { id: 'question1', label: "Question 1" },
     { id: 'question1', label: "Question 2" },
@@ -39,7 +39,7 @@ const form3 = {
 }
 
 const form4 = {
-  title: "Plan de la société",
+  title: "Titre 4",
   inputs: [
     { id: 'question1', label: "Question 1" },
     { id: 'question1', label: "Question 2" },
@@ -49,7 +49,7 @@ const form4 = {
 }
 
 const form5 = {
-  title: "Plan de la société",
+  title: "Titre 5",
   inputs: [
     { id: 'question1', label: "Question 1" },
     { id: 'question1', label: "Question 2" },

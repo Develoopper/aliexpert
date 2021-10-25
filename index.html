@@ -14,15 +14,49 @@
 		/>
 
 		<title>Form</title>
+
+		<style>
+			.red li a.active,
+			.red li a:hover {
+					color: black	 !important;
+					background-color: #f8f9fa !important;
+			}
+		</style>
 	</head>
 	<body>
 		<header>
-			<ul id='navbar' class="nav nav-pills nav-fill">
+			<nav class="ps-3 navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand pr-2" href="#">
+					<img src="http://aliexpert.ma/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+				</a>
+				<a class="navbar-brand" href="#">Aliexpert</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Option 1</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Option 2</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Option 3</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Option 4</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<ul id='navbar' class="nav nav-tabs nav-fill red">
 				<!-- auto fill -->
 			</ul>
 		</header>
 		<div class="row mx-5 d-flex justify-content-center">
-      <form id="form" class="row col col-md-8 g-4 mt-0 needs-validation">
+      <form id="form1" class="row col col-md-8 g-4 mt-0 needs-validation">
 				<!-- auto fill -->
 			</form>
 		</div>

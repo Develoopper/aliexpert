@@ -1,9 +1,9 @@
-for (const input of form) {
-  if (input.title) { // if is a title
-    $('#form').append(`
-      <h1 class="mt-5">${input.title}</h1>
-    `)
-  } else if (input.options) { // if is a select
+$('#form').append(`
+  <h1 class="mt-5">${form1.title}</h1>
+`)
+
+for (const input of form1.inputs) {
+  if (input.options) { // if is a select
     let html = '';
     for (option of input.options)
       html += `<option value="${option}">${option}</option>`

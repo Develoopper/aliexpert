@@ -1,3 +1,11 @@
+for (const form of forms) {
+  $('#navbar').append(`
+    <li class="nav-item">
+      <a class="nav-link text-dark active" href="#">${form.title}</a>
+    </li>
+  `)
+}
+
 $('#form').append(`
   <h1 class="mt-5">${form1.title}</h1>
 `)
@@ -40,3 +48,7 @@ $('#form').append(`
     Envoyer
   </button>
 `);
+
+$("#submit").click(() => {
+  $("#form").animate({ width:'toggle' },350);
+})

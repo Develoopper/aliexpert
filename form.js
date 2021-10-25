@@ -19,7 +19,7 @@ const form1 = {
 }
 
 const form2 = {
-  title: "Titre 2",
+  title: "Plan de la société",
   inputs: [
     { id: 'question1', label: "Question 1" },
     { id: 'question1', label: "Question 2" },
@@ -28,4 +28,34 @@ const form2 = {
   ]
 }
 
-const forms = [form1, form2];
+const form3 = {
+  title: "Plan de la société",
+  inputs: [
+    { id: 'question1', label: "Question 1" },
+    { id: 'question1', label: "Question 2" },
+    { id: 'question1', label: "Question 3" },
+    { id: 'question1', label: "Question 4" },
+  ]
+}
+
+const form4 = {
+  title: "Plan de la société",
+  inputs: [
+    { id: 'question1', label: "Question 1" },
+    { id: 'question1', label: "Question 2" },
+    { id: 'question1', label: "Question 3" },
+    { id: 'question1', label: "Question 4" },
+  ]
+}
+
+const form5 = {
+  title: "Plan de la société",
+  inputs: [
+    { id: 'question1', label: "Question 1" },
+    { id: 'question1', label: "Question 2" },
+    { id: 'question1', label: "Question 3" },
+    { id: 'question1', label: "Question 4" },
+  ]
+}
+
+const forms = [form1, form2, form3, form4, form5];

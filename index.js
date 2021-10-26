@@ -9,12 +9,8 @@ for (const _form in forms) {
   `)
 }
 
-
-$('#navbar li a').click(function (e) {
-  $("#navbar li a").removeClass("active");
-  $(this).addClass("active");
-})
-
+//
+// show title
 $('#form1').append(`
   <h1 class="mt-5">${form1.title}</h1>
 `)

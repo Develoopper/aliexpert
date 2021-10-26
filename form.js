@@ -1,5 +1,4 @@
 const form1 = {
-  id: 'form1',
   title: "Informations de la société",
   inputs: [
     { id: 'date', label: "Date de création", date: true },
@@ -22,7 +21,6 @@ const form1 = {
 }
 
 const form2 = {
-  id: 'form2',
   title: "Plan de la société",
   inputs: [
     { id: 'question1', label: "Question 1" },
@@ -33,7 +31,6 @@ const form2 = {
 }
 
 const form3 = {
-  id: 'form3',
   title: "Titre 3",
   inputs: [
     { id: 'question1', label: "Question 1" },
@@ -44,7 +41,6 @@ const form3 = {
 }
 
 const form4 = {
-  id: 'form4',
   title: "Titre 4",
   inputs: [
     { id: 'question1', label: "Question 1" },
@@ -55,7 +51,6 @@ const form4 = {
 }
 
 const form5 = {
-  id: 'form5',
   title: "Titre 5",
   inputs: [
     { id: 'question1', label: "Question 1" },
@@ -67,4 +62,4 @@ const form5 = {
 
 const forms = { form1, form2, form3, form4, form5 };
 
-let currentFormIndex = 0
+let currentFormIndex = 0;

@@ -25,9 +25,9 @@ function showForm() {
         html += `<option value="${option}">${option}</option>`
 
       $('#form').append(`
-        <div class='col'>
-          <label for="type" class="form-label">${input.label} *</label>
-          <select class="form-select" id="type" required>
+        <div>
+          <label for="${input.id}" class="form-label">${input.label} *</label>
+          <select class="form-select" id="${input.id}" required>
             <option value="" selected></option>
             ${html}
           </select>
@@ -70,8 +70,12 @@ function showForm() {
   }
 
   $('#form').append(`
-    <button type="button" id="submit" class="my-5 btn btn-dark">
-      Continuer
+    <button type="button" id="submit" class="my-5 btn btn-dark col me-2">
+      <i class="bi bi-caret-left"></i>
+      Précedent
+    </button>
+    <button type="button" id="submit" class="my-5 btn btn-dark col">
+      Suivant
       <i class="bi bi-caret-right"></i>
     </button>
   `)

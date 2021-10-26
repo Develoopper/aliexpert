@@ -4,7 +4,7 @@ const form1 = {
     { id: 'date', label: "Date de création", date: true },
     { id: 'nom', label: "Raison sociale" },
     { 
-      id: 'form-juridique', label: "Forme juridique", 
+      id: 'formJuridique', label: "Forme juridique", 
       options: [
         "SA",
         "SARL",
@@ -15,8 +15,24 @@ const form1 = {
       ] 
     },
     { id: 'description', label: "Description", textarea: true },
-    { id: 'nom1', label: "Raison sociale" },
-    { id: 'nom2', label: "Raison sociale" },
+    { 
+      id: 'activite', label: "Activité",
+      options: [
+        "Service",
+        "Industrie",
+        "Négocie"
+      ] 
+    },
+    { 
+      id: 'tailleSociete', label: "Taille de la société",
+      options: [
+        "Sans chiffre d'affaires",
+        "CA inférieur à 1 million de dirhams",
+        "CA entre 1 million et 5 millions de dirhams",
+        "CA entre 5 million et 10 millions de dirhams",
+        "CA plus de 10 millions de dirhams",
+      ]
+    },
   ]
 }
 

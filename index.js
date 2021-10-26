@@ -1,22 +1,20 @@
+// show tabs
 for (const _form in forms) {
   const form = forms[_form];
   const active = form.id === 'form1' ? 'active' : '';
   $('#navbar').append(`
     <li class="nav-item">
-      <a class="nav-link text-dark ${active}" aria-current="page" href="#">${form.title}</a>
+      <a id='${_form}-tab' class="nav-link text-dark ${active}" aria-current="page" href="#">${form.title}</a>
     </li>
   `)
 }
 
-$('#navbar li a').click(function (e) {
-  $("#navbar li a").removeClass("active");
-  $(this).addClass("active");
-})
-
+// show title
 $('#form1').append(`
   <h1 class="mt-5">${form1.title}</h1>
 `)
 
+// show inputs
 for (const input of form1.inputs) {
   if (input.options) { // if is a select
     let html = '';
@@ -51,11 +49,18 @@ for (const input of form1.inputs) {
 }
 
 $('#form1').append(`
-  <button type="submit" id="submit" class="my-5 btn btn-dark">
-    Envoyer
+  <button type="button" id="submit" class="my-5 btn btn-dark">
+    Continuer
+    <i class="bi bi-caret-right-fill"></i>
   </button>
 `);
 
 $("#submit").click(() => {
-  $("#form1").animate({ width:'toggle' },350);
+  if (currentFormIndex === Object.keys(forms).length - 1)
+    currentFormIndex = 0;
+  else
+    currentFormIndex += 1;
+  $("#navbar li a").removeClass("active");
+  const nextTabId = Object.keys(forms)[currentFormIndex] + '-tab';
+  $('#' + nextTabId).addClass("active");
 })

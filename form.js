@@ -64,3 +64,5 @@ const form5 = {
 }
 
 const forms = { form1, form2, form3, form4, form5 };
+
+let currentFormIndex = 0

@@ -1,7 +1,9 @@
-for (const form of forms) {
+for (const _form in forms) {
+  const form = forms[_form];
+  const active = form.id === 'form1' ? 'active' : '';
   $('#navbar').append(`
     <li class="nav-item">
-      <a class="nav-link text-dark" aria-current="page" href="#">${form.title}</a>
+      <a class="nav-link text-dark ${active}" aria-current="page" href="#">${form.title}</a>
     </li>
   `)
 }
@@ -9,8 +11,6 @@ for (const form of forms) {
 $('#navbar li a').click(function (e) {
   $("#navbar li a").removeClass("active");
   $(this).addClass("active");
-
-
 })
 
 $('#form1').append(`

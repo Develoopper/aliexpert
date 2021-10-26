@@ -3,19 +3,21 @@ const form1 = {
   title: "Informations de la société",
   inputs: [
     { id: 'date', label: "Date de création", date: true },
-    { id: 'nom', label: "Nom de la société" },
+    { id: 'nom', label: "Raison sociale" },
     { 
-      id: 'type', label: "Type", 
+      id: 'form-juridique', label: "Forme juridique", 
       options: [
-        "Type1",
-        "Type2",
-        "Type3",
-        "Type4",
-        "Type5",
-        "Type6"
+        "SA",
+        "SARL",
+        "SNC",
+        "SNA",
+        "SCP",
+        "Auto entrepreneur"
       ] 
     },
     { id: 'description', label: "Description", textarea: true },
+    { id: 'nom1', label: "Raison sociale" },
+    { id: 'nom2', label: "Raison sociale" },
   ]
 }
 

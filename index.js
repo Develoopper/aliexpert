@@ -23,7 +23,7 @@ for (const input of form1.inputs) {
       html += `<option value="${option}">${option}</option>`
 
     $('#form1').append(`
-      <div class='col'>
+      <div class='col-md-6'>
         <label for="type" class="form-label">${input.label} *</label>
         <select class="form-select" id="type" required>
           <option value="" selected></option>
@@ -33,7 +33,7 @@ for (const input of form1.inputs) {
     `)
   } else if (input.textarea) { // if is a textarea
     $('#form1').append(`
-      <div>
+      <div class='col-md-6'>
         <label for="${input.id}" class="form-label">${input.label} *</label>
         <textarea class="form-control" id="${input.id}" rows="4" required></textarea>
       </div>
@@ -41,7 +41,7 @@ for (const input of form1.inputs) {
   } else { // if is an input
     const type = input.date ? 'type=date' : '';
     $('#form1').append(`
-      <div>
+      <div class='col-md-6'>
         <label for="${input.id}" class="form-label">${input.label} *</label>
         <input id="${input.id}" ${type} class="form-control" required/>
       </div>
@@ -64,4 +64,6 @@ $("#submit").click(() => {
   $("#navbar li a").removeClass("active");
   const nextTabId = Object.keys(forms)[currentFormIndex] + '-tab';
   $('#' + nextTabId).addClass("active");
+
+  
 })

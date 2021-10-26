@@ -61,5 +61,11 @@ const form5 = {
 }
 
 const forms = { form1, form2, form3, form4, form5 };
+// add attribute (value: '') to all inputs
+Object.values(forms)
+  .map((form) => form.inputs)
+  .map((inputs) => {
+    inputs.map((obj) => { obj.value = '' }); 
+  })
 
 let currentFormIndex = 0;

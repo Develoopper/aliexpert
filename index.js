@@ -11,44 +11,62 @@ for (const _form in forms) {
 
 function showForm() {
   const formsIds = Object.keys(forms);
-  console.log(formsIds[currentFormIndex])
+  const currentForm = forms[formsIds[currentFormIndex]];
   // show title
   $('#form').append(`
-    <h1 class="mt-5">${forms[formsIds[currentFormIndex]].title}</h1>
+    <h1 class="mt-5">${currentForm.title}</h1>
   `)
 
   // show inputs
-  for (const input of forms[formsIds[currentFormIndex]].inputs) {
-  if (input.options) { // if is a select
-    let html = '';
-    for (option of input.options)
-      html += `<option value="${option}">${option}</option>`
+  for (const input of currentForm.inputs) {
+    if (input.options) { // if is a select
+      let html = '';
+      for (option of input.options)
+        html += `<option value="${option}">${option}</option>`
 
-    $('#form').append(`
-      <div class='col'>
-        <label for="type" class="form-label">${input.label} *</label>
-        <select class="form-select" id="type" required>
-          <option value="" selected></option>
-          ${html}
-        </select>
-      </div>
-    `)
-  } else if (input.textarea) { // if is a textarea
-    $('#form').append(`
-      <div>
-        <label for="${input.id}" class="form-label">${input.label} *</label>
-        <textarea class="form-control" id="${input.id}" rows="4" required></textarea>
-      </div>
-    `)
-  } else { // if is an input
-    const type = input.date ? 'type=date' : '';
-    $('#form').append(`
-      <div>
-        <label for="${input.id}" class="form-label">${input.label} *</label>
-        <input id="${input.id}" ${type} class="form-control" required/>
-      </div>
-    `)
-  }
+      $('#form').append(`
+        <div class='col'>
+          <label for="type" class="form-label">${input.label} *</label>
+          <select class="form-select" id="type" required>
+            <option value="" selected></option>
+            ${html}
+          </select>
+        </div>
+      `)
+    } else if (input.textarea) { // if is a textarea
+      $('#form').append(`
+        <div>
+          <label for="${input.id}" class="form-label">${input.label} *</label>
+          <textarea class="form-control" id="${input.id}" rows="4" required></textarea>
+        </div>
+      `)
+    } else { // if is an input
+      const type = input.date ? 'type=date' : '';
+      $('#form').append(`
+        <div>
+          <label for="${input.id}" class="form-label">${input.label} *</label>
+          <input id="${input.id}" ${type} class="form-control" required/>
+        </div>
+      `)
+    }
+
+    // load input value from memory
+    $('#' + input.id).val(currentForm.inputs.find((obj) => obj.id === input.id).value);
+    
+    $('#' + input.id).change(function (e) {
+      const currentInput = currentForm.inputs.find((obj) => obj.id === input.id);
+      currentInput.value = e.target.value;
+      
+      const filledInputsCount = currentForm.inputs
+        .map((obj) => obj.value)
+        .filter((value) => value !== '')
+        .length;
+      const filledInputsRatio = (filledInputsCount / currentForm.inputs.length) * 100;
+      console.log(filledInputsCount);
+      console.log(currentForm.inputs.length);
+      $('.progress-bar').css('width', filledInputsRatio + '%');
+    })
+    
   }
 
   $('#form').append(`

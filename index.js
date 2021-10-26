@@ -8,6 +8,7 @@ for (const _form in forms) {
   `)
 }
 
+
 $('#navbar li a').click(function (e) {
   $("#navbar li a").removeClass("active");
   $(this).addClass("active");

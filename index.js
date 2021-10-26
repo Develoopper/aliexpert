@@ -3,8 +3,8 @@ for (const _form in forms) {
   const form = forms[_form];
   const active = Object.keys(forms).indexOf(_form) === 0 ? 'active' : '';
   $('#navbar').append(`
-    <li class="nav-item">
-      <a id='${_form}-tab' class="nav-link text-dark ${active}" aria-current="page" href="#">${form.title}</a>
+    <li class="nav-item ${active}" id='${_form}-tab'>
+      <a class="nav-link text-dark" aria-current="page" href="#">${form.title}</a>
     </li>
   `)
 }
@@ -86,7 +86,7 @@ function showForm() {
       currentFormIndex = 0;
     else
       currentFormIndex += 1;
-    $("#navbar li a").removeClass("active");
+    $("#navbar li").removeClass("active");
     const nextTabId = Object.keys(forms)[currentFormIndex] + '-tab';
     $('#' + nextTabId).addClass("active");
   

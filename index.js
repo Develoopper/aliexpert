@@ -70,11 +70,11 @@ function showForm() {
   }
 
   $('#form').append(`
-    <button type="button" id="prev" class="my-5 btn btn-dark col me-2">
+    <button type="button" name='prev-next' id="prev" class="my-5 btn btn-dark col me-2">
       <i class="bi bi-caret-left"></i>
       Précedent
     </button>
-    <button type="button" id="next" class="my-5 btn btn-dark col">
+    <button type="button" name='prev-next' id="next" class="my-5 btn btn-dark col">
       Suivant
       <i class="bi bi-caret-right"></i>
     </button>
@@ -84,12 +84,19 @@ function showForm() {
     window.scrollTo(0, 0);
   }, 100);
 
-  $("#next").click(() => {
+  $("[name='prev-next']").click((e) => {
     const formsIds = Object.keys(forms);
-    if (currentFormIndex === formsIds.length - 1)
-      currentFormIndex = 0;
+    if (e.target.id === 'prev')
+      if (currentFormIndex === 0)
+        currentFormIndex = formsIds.length - 1;
+      else
+        currentFormIndex -= 1;
     else
-      currentFormIndex += 1;
+      if (currentFormIndex === formsIds.length - 1)
+        currentFormIndex = 0;
+      else
+        currentFormIndex += 1;
+
     $("#navbar li").removeClass("active");
     const nextTabId = Object.keys(forms)[currentFormIndex] + '-tab';
     $('#' + nextTabId).addClass("active");

@@ -1,0 +1,42 @@
+Fonctionnalités :
+  Front office : 
+    •	Formulaire simple et ergonomique.
+    •	Implémenter une barre de progression qui est incrémentée à chaque saisie de réponse pour encourager l'utilisateur à compléter tout le formulaire.
+    •	Afficher toutes les questions d'une catégorie 2 sans avoir besoin de défiler la page en bas.
+    •	Indiquer à l'utilisateur où il se situe dans le formulaire.
+    •	Demander à l'utilisateur s'il veut continuer la saisie du formulaire ou livrer la responsabilité au cabinet.
+    •	Authentification avec SMS.
+    •	Le formulaire est sauvegardé après chaque complétion de Titre et l'utilisateur peut poursuivre ultérieurement.
+    •	Après complétion du formulaire on affiche la note et le rapport qui contient les anomalies détectées et les suggestions.
+  Back office :
+    •	Authentification avec nom d'admin et mot de passe.
+    •	Afficher la liste des utilisateurs qui ont :
+      o	Complété le formulaire
+      o	En cours de saisie ou ont arrêter temporairement
+      o	Abandonné
+
+Expérience de l'utilisateur :
+  •	Demande d'inscription ou de connexion avec SMS.
+  •	L'utilisateur remplit le formulaire.
+  •	Après chaque fois que l'utilisateur complète les questions d'un Titre :
+  •	Si l'utilisateur choisit de déléguer la tache au cabinet :
+    o	L'utilisateur reçoi un message indiquant que sa demande est en cours de traitement.
+  •	L'utilisateur peut choisir d'arrêter et peut reprendre son progrès lors de la prochaine connexion.
+  •	Si l'utilisateur complète tout le formulaire, il va visualiser la note et le rapport qui contient les anomalies détectées et les suggestions.
+
+Technique :
+  Front end :
+    •	HTML, CSS, Javascript
+    •	Framework Vue.js pour pouvoir développer une Single Page Application qui se caractérise par:
+      o	La rapidité (toute l'application se déroule sur une seule page donc on n'a pas besoin de la rafraichir pour changer la page)
+      o	La sécurité (Vue.js prévient les injections de scripts)
+      o	Sa librairie de composants Vuetify.js qui est riche en composants UI qui sont indépendants et configurables. 
+
+  Back end :
+    •	PHP, SQL
+    •	Framework Laravel pour faciliter la communication avec la base de données avec son ORM et son système de Migrations, et fournir une couche de sécurité pour prévenir les injections SQL.
+    •	Authentification par JSON Web Token (JWT) et OTP.
+    •	Laravel et Vue.js sont des frameworks qui sont riches en fonctionnalités et offres plusieurs possibilités pour l'évolution de l'application, ainsi qu'ils sont maintenus par une large communauté.
+    •	Outils de collaboration et d’hébergement :
+    •	Git et Github, pour sauvegarder le code source de l'application et faciliter le développement simultané, et avoir un backup de toutes les versions précédentes du projet.
+    •	Heroku pour héberger l'application (gratuitement en mode développement) et pouvoir visualiser l'avancement du projet.

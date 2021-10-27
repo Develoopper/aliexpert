@@ -70,11 +70,11 @@ function showForm() {
   }
 
   $('#form').append(`
-    <button type="button" id="submit" class="my-5 btn btn-dark col me-2">
+    <button type="button" id="prev" class="my-5 btn btn-dark col me-2">
       <i class="bi bi-caret-left"></i>
       Précedent
     </button>
-    <button type="button" id="submit" class="my-5 btn btn-dark col">
+    <button type="button" id="next" class="my-5 btn btn-dark col">
       Suivant
       <i class="bi bi-caret-right"></i>
     </button>
@@ -84,7 +84,7 @@ function showForm() {
     window.scrollTo(0, 0);
   }, 100);
 
-  $("#submit").click(() => {
+  $("#next").click(() => {
     const formsIds = Object.keys(forms);
     if (currentFormIndex === formsIds.length - 1)
       currentFormIndex = 0;

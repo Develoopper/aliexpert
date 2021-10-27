@@ -65,6 +65,9 @@ function showForm() {
       console.log(filledInputsCount);
       console.log(currentForm.inputs.length);
       $('.progress-bar').css('width', filledInputsRatio + '%');
+      if (filledInputsRatio === 100)
+        $('.progress-bar').animate({ backgroundColor: '#198754' }, 'slow');
+        
     })
     
   }
